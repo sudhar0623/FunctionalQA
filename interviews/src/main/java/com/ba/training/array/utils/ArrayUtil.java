@@ -1,7 +1,6 @@
 package com.ba.training.array.utils;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
 
 public class ArrayUtil {
 
@@ -21,22 +20,18 @@ public class ArrayUtil {
 		return reverseArray;
 	}
 
-	public static Integer[] removeDuplicates(int[] arr) {
-		{
-			Set<Integer> set = new HashSet<Integer>();
-			for (int i = 0; i < arr.length; i++) {
-				set.add(arr[i]);
+	public static int[] removeDuplicates(int[] arr) {
+		int len = arr.length;
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				if (arr[i] == arr[j]) {
+					arr[j] = arr[len - 1];
+					len--;
+					j--;
+				}
 			}
-			Integer[] newArr = new Integer[set.size()];
-			return set.toArray(newArr);
 		}
-	}
-
-	public static void main(String[] args) {
-		int[] arr = { 1, 2, 3, 3, 4, 5, 2, 1 };
-		Integer[] newArray = removeDuplicates(arr);
-		for (int i = 0; i <= newArray.length - 1; i++) {
-			System.out.print(newArray[i] + " ");
-		}
+		int[] newArr = Arrays.copyOf(arr, len);
+		return newArr;
 	}
 }
