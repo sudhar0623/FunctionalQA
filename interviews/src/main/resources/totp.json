@@ -1,0 +1,21 @@
+{
+    "secondFactor" : {
+         "secCode" : "",
+         "deviceId" : 1
+    },
+    "dsRequest" : {
+        "languageCd" : "US-EN",
+        "appCredentials" : {
+            "appIdKey" : ""
+        }
+    },
+    "account" : {
+        "accountName" : "",
+        "password" : ""
+    },
+    "personFetchPrefs" : {
+        "fetchAccount" : true,
+        "fetchCoreInfo" : true
+    },
+    "generateDAWToken" : true
+}
